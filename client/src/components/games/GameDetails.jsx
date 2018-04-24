@@ -50,7 +50,7 @@ class GameDetails extends PureComponent {
       .map(p => p.userId)[0]
 
     return (<Paper className="outer-paper">
-      <h1>Game #{game.id}</h1>
+      <h1>Game {game.id}</h1>
 
       <p>Status: {game.status}</p>
 

@@ -1,4 +1,6 @@
 .board-tile {
+  text-align: center;
   height: 50px;
   width: 50px;
+  padding: 50px;
 }

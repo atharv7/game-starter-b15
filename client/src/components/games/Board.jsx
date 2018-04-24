@@ -12,6 +12,11 @@ import './Board.css'
 //   )
 // }
 
+
+
+
+
+
 export default ({board, makeMove}) => [1].map((cells, rowIndex) =>
   <div key={rowIndex}>
   <button
