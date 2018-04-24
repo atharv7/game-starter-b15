@@ -18,15 +18,15 @@ export const isValidTransition = (playerSymbol: Symbol, from: Board, to: Board) 
   const changes = from
     .map(
       (row, rowIndex) => row.map((symbol, columnIndex) => ({
-        from: symbol, 
+        from: symbol,
         to: to[rowIndex][columnIndex]
       }))
     )
     .reduce((a,b) => a.concat(b))
     .filter(change => change.from !== change.to)
 
-  return changes.length === 1 && 
-    changes[0].to === playerSymbol && 
+  return changes.length === 1 &&
+    changes[0].to === playerSymbol &&
     changes[0].from === null
 }
 
