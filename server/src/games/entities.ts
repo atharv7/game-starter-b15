@@ -5,7 +5,7 @@ export type Symbol = '1' | '2' | '3' | '4' | '5' | '6'
 export type Row = [ Symbol | null, Symbol | null, Symbol | null ]
 export type Board = [ Row ]
 
-type Status = 'pending' | 'started' | 'finished'
+type Status = 'batting' | 'bowling' | 'End of match'
 
 const emptyRow: Row = [null, null, null]
 const emptyBoard: Board = [ emptyRow ]

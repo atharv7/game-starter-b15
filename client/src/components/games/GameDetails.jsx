@@ -50,9 +50,16 @@ class GameDetails extends PureComponent {
       .map(p => p.userId)[0]
 
     return (<Paper className="outer-paper">
-      <h1>Game #{game.id}</h1>
+      <h1>Hand Cricket - {game.id}</h1>
 
       <p>Status: {game.status}</p>
+
+      <p>Batting</p>
+      <p>Your Score: </p>
+      <p>Overs: </p>
+      <p>Opp. Score: </p>
+
+
 
       {
         game.status === 'started' &&
