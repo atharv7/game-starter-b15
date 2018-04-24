@@ -7,8 +7,8 @@ import './Board.css'
 
 
 
-export default ({board, makeMove}) => [1].map((cells, rowIndex) =>
-  <div key={rowIndex}>
+export default () =>
+  <div>
   <button
     className="board-tile"
     key={`1`}
