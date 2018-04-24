@@ -14,6 +14,7 @@ export const USER_LOGOUT = 'USER_LOGOUT'
 export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS'
 export const USER_SIGNUP_FAILED = 'USER_SIGNUP_FAILED'
 
+
 export const logout = () => ({
   type: USER_LOGOUT
 })
@@ -66,11 +67,14 @@ export const getUsers = () => (dispatch, getState) => {
   if (!state.currentUser) return null
   const jwt = state.currentUser.jwt
 
-  if (isExpired(jwt)) return dispatch(logout())
+
+
+	if (isExpired(jwt)) return dispatch(logout())
+	
 
   request
     .get(`${baseUrl}/users`)
-    .set('Authorization', `Bearer ${jwt}`)
+		.set('Authorization', `Bearer ${jwt}`)
     .then(result => {
       dispatch({
         type: UPDATE_USERS,
@@ -79,3 +83,4 @@ export const getUsers = () => (dispatch, getState) => {
     })
     .catch(err => console.error(err))
 }
+

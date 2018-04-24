@@ -4,15 +4,15 @@ import { Board, Symbol, Row } from './entities'
 @ValidatorConstraint()
 export class IsBoard implements ValidatorConstraintInterface {
 
-  validate(board: Board) {
-    const symbols = [ 'x', 'o', null ]
-    return board.length === 3 &&
-      board.every(row =>
-        row.length === 3 &&
-        row.every(symbol => symbols.includes(symbol))
-      )
-  }
-}
+//   validate(board: Board) {
+//     const symbols = [ '1', '2', '3', '4', '5', '6' ]
+//     return board.length === 3 &&
+//       board.every(row =>
+//         row.length === 6 &&
+//         row.every(symbol => symbols.includes(symbol))
+//       )
+//   }
+// }
 
 export const isValidTransition = (playerSymbol: Symbol, from: Board, to: Board) => {
   const changes = from

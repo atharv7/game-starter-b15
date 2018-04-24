@@ -54,7 +54,7 @@ class GameDetails extends PureComponent {
 
       <p>Status: {game.status}</p>
 
-      <p>Batting</p>
+      <p>Batting:{users[userId].firstName}</p>
       <p>Your Score: </p>
       <p>Overs: </p>
       <p>Opp. Score: </p>
@@ -92,7 +92,7 @@ const mapStateToProps = (state, props) => ({
   authenticated: state.currentUser !== null,
   userId: state.currentUser && userId(state.currentUser.jwt),
   game: state.games && state.games[props.match.params.id],
-  users: state.users
+  users: state.users,
 })
 
 const mapDispatchToProps = {
