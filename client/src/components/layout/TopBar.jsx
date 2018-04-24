@@ -13,9 +13,9 @@ const TopBar = (props) => {
 
   return (
     <AppBar position="absolute" style={{zIndex:10}}>
-      <Toolbar>
+      <Toolbar style={{backgroundColor: 'green'}}>
         <Typography variant="title" color="inherit" style={{flex: 1}}>
-          Multiplayer Tic Tac Toe
+          Hand-Cricket!
         </Typography>
         {
           user &&
