@@ -1,5 +1,5 @@
 import { ValidatorConstraint } from 'class-validator'
-import { Board} from './entities'
+import { Board, Player} from './entities'
 
 @ValidatorConstraint()
 export class IsBoard {
