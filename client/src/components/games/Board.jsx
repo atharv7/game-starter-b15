@@ -13,10 +13,9 @@ import './Board.css'
 
 
 
-
-
 export default (props) => 
   <div>
+    
   <button
     className="board-tile"
     // disabled={hasTurn}
