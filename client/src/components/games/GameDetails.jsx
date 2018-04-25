@@ -54,10 +54,12 @@ class GameDetails extends PureComponent {
 
       <p>Status: {game.status}</p>
 
-      <p>Batting:{users[userId].firstName}</p>
+      {/* <p>Batting:{users[userId].firstName}</p> */}
       <p>Your Score: </p>
       <p>Overs: </p>
-      <p>Opp. Score: </p>
+
+      
+  <p> {(game.players[1])?(users[game.players[0].userId].firstName===users[userId].firstName)?users[game.players[1].userId].firstName+'\'s Score:':users[game.players[0].userId].firstName+'\'s Score:':'**Waiting**'}</p>
 
 
 
@@ -83,6 +85,9 @@ class GameDetails extends PureComponent {
       {
         game.status !== 'pending' &&
         <Board board={game.board} makeMove={this.makeMove} />
+
+        // console.log(game.player)
+
       }
     </Paper>)
   }
@@ -93,6 +98,7 @@ const mapStateToProps = (state, props) => ({
   userId: state.currentUser && userId(state.currentUser.jwt),
   game: state.games && state.games[props.match.params.id],
   users: state.users,
+  players: state.players
 })
 
 const mapDispatchToProps = {
@@ -100,3 +106,6 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameDetails)
+
+
+

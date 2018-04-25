@@ -1,14 +1,12 @@
 import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Index, OneToMany, ManyToOne } from 'typeorm'
 import User from '../users/entity'
 
-export type Symbol = '1' | '2' | '3' | '4' | '5' | '6'
-export type Row = [ Symbol | null, Symbol | null, Symbol | null ]
-export type Board = [ Row ]
+export type Board = [ number,number ]
 
 type Status = 'batting' | 'bowling' | 'End of match'
 
-const emptyRow: Row = [null, null, null]
-const emptyBoard: Board = [ emptyRow ]
+
+const emptyBoard: Board = [ 0,0 ]
 
 @Entity()
 export class Game extends BaseEntity {
