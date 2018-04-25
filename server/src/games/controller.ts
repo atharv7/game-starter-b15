@@ -4,7 +4,7 @@ import {
 } from 'routing-controllers'
 import User from '../users/entity'
 import { Game, Player, Board } from './entities'
-import {IsBoard, isValidTransition, calculateWinner, finished} from './logic'
+import {IsBoard, calculateWinner } from './logic'
 import { Validate } from 'class-validator'
 import {io} from '../index'
 
@@ -52,9 +52,9 @@ export default class GameController {
   ) {
     const game = await Game.findOneById(gameId)
     if (!game) throw new BadRequestError(`Game does not exist`)
-    if (game.status !== 'pending') throw new BadRequestError(`Game is already started`)
+    //if (game.status !== 'pending') throw new BadRequestError(`Game is already started`)
 
-    game.status = 'started'
+//game.status = 'started'
     await game.save()
 
     const player = await Player.create({
@@ -87,24 +87,24 @@ export default class GameController {
     const player = await Player.findOne({ user, game })
 
     if (!player) throw new ForbiddenError(`You are not part of this game`)
-    if (game.status !== 'started') throw new BadRequestError(`The game is not started yet`)
+    //if (game.status !== 'started') throw new BadRequestError(`The game is not started yet`)
     if (player.symbol !== game.turn) throw new BadRequestError(`It's not your turn`)
-    if (!isValidTransition(player.symbol, game.board, update.board)) {
-      throw new BadRequestError(`Invalid move`)
-    }    
+    //if (!isValidTransition(player.symbol, game.board, update.board)) {
+     // throw new BadRequestError(`Invalid move`)
+    //}    
 
     console.log('2')
 
     const winner = calculateWinner(update.board)
     if (winner) {
-      game.winner = winner
-      game.status = 'finished'
+      // game.winner = winner
+      // game.status = 'finished'
     }
-    else if (finished(update.board)) {
-      game.status = 'finished'
-    }
+    // else if (finished(update.board)) {
+      // game.status = 'finished'
+    // }
     else {
-      game.turn = player.symbol === 'x' ? 'o' : 'x'
+      // game.turn = player.symbol === 'x' ? 'o' : 'x'
     }
     game.board = update.board
     await game.save()

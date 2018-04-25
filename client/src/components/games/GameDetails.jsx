@@ -21,7 +21,7 @@ class GameDetails extends PureComponent {
 
   makeMove = (points) => {
     const {game, updateGame} = this.props
-    console.log(points)
+    console.log(points, game.board)
     const board = game.board[0] + points
     updateGame(game.id, board)
   }
