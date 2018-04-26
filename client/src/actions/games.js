@@ -69,6 +69,7 @@ export const createGame = () => (dispatch, getState) => {
 }
 
 
+
 export const switchTurn = (gameId, currentTurn) => (dispatch, getState) => {
   const state = getState()
   const jwt = state.currentUser.jwt

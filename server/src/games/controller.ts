@@ -95,13 +95,15 @@ export default class GameController {
     //   game.turn = player.symbol === 'x' ? 'o' : 'x'
     // }
     game.board = update.board
+    
     if(game.turn==='x') {
       game.turn='o'
     } else {
       game.turn='x'
     }
+    game.balls +=1
     await game.save()
-    
+
     
     io.emit('action', {
       type: 'UPDATE_GAME',
