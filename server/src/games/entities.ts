@@ -3,7 +3,7 @@ import User from '../users/entity'
 
 export type Board = [ number,number ]
 
-type Status = 'batting' | 'bowling' | 'End of match'
+type Status = 'pending' | 'started' | 'finished'
 
 
 const emptyBoard: Board = [ 0,0 ]
@@ -21,7 +21,7 @@ export class Game extends BaseEntity {
   turn: Symbol
 
   @Column('char', {length:1, nullable: true})
-  winner: Symbol
+  winner: number
 
   @Column('text', {default: 'pending'})
   status: Status

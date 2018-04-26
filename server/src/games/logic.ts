@@ -4,34 +4,43 @@ import { Board, Player} from './entities'
 @ValidatorConstraint()
 export class IsBoard {
 
-//   validate(board: Board) {
-//     const symbols = [ '1', '2', '3', '4', '5', '6' ]
-//     return board.length === 3 &&
-//       board.every(row =>
-//         row.length === 6 &&
-//         row.every(symbol => symbols.includes(symbol))
-//       )
-//   }
-// }
+  validate(board: Board) {
 
-// export const isValidTransition = (playerSymbol: Symbol, from: Board, to: Board) => {
-//   const changes = from
-//     .map(
-//       (row, rowIndex) => row.map((symbol, columnIndex) => ({
-//         from: symbol,
-//         to: to[rowIndex][columnIndex]
-//       }))
-//     )
-//     .reduce((a,b) => a.concat(b))
-//     .filter(change => change.from !== change.to)
-
-//   return changes.length === 1 &&
-//     changes[0].to === playerSymbol &&
-//     changes[0].from === null
-// 
+    if(board && Player)
+    {return true}
+    else
+    {return true}
+    // const symbols = [ '1', '2', '3', '4', '5', '6' ]
+    // return board.length === 3 &&
+    //   board.every(row =>
+    //     row.length === 6 &&
+    //     row.every(symbol => symbols.includes(symbol))
+      // )
+  }
 }
 
-export const calculateWinner = (board: Board): [number,number] =>{
+export const isValidTransition = (playerSymbol: Symbol, from: Board, to: Board) => {
+  // const changes = from
+  //   .map(
+  //     (row, rowIndex) => row.map((symbol, columnIndex) => ({
+  //       from: symbol,
+  //       to: to[rowIndex][columnIndex]
+  //     }))
+  //   )
+  //   .reduce((a,b) => a.concat(b))
+  //   .filter(change => change.from !== change.to)
+  if(playerSymbol && from && to) {
+return true
+} else {
+  return true
+}
+  // return changes.length === 1 &&
+  //   changes[0].to === playerSymbol &&
+  //   changes[0].from === null
+
+}
+
+export const calculateWinner = (board: Board) =>{
   // board
   //   .concat(
   //     // vertical winner
@@ -48,12 +57,12 @@ export const calculateWinner = (board: Board): [number,number] =>{
   //   .filter(row => row[0] && row.every(symbol => symbol === row[0]))
   //   .map(row => row[0])[0] || null
   if(board[0]>board[1]) {
-    return [1,0]
+    return 1
   } else {
       if(board[0]===board[1]){
-        return [1,1]
+        return 2
       } else {
-    return [0,1]
+    return 3
   }
   }
 }
