@@ -18,40 +18,40 @@ export default class SignupForm extends PureComponent {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form onSubmit={this.handleSubmit} style={{maxWidth:'500px',margin:'auto',backgroundColor:'orange',color:'white',padding:'25px',borderRadius:'5%'}}>
 				<div>
-					<label htmlFor="firstName">First Name</label>
+					<label htmlFor="firstName"></label>
 					<input type="text" name="firstName" id="firstName" value={
 						this.state.firstName || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } placeholder="Your First Name" />
 				</div>
-
+				<br/>
 				<div>
-					<label htmlFor="lastName">Last Name</label>
+					<label htmlFor="lastName"></label>
 					<input type="text" name="lastName" id="firstName" value={
 						this.state.lastName || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } placeholder="Your Last Name"/>
 				</div>
-
+				<br/>
 				<div>
-					<label htmlFor="email">Email</label>
+					<label htmlFor="email"></label>
 					<input type="email" name="email" id="email" value={
 						this.state.email || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } placeholder="You@Example.com"/>
 				</div>
-
+				<br/>
 				<div>
-					<label htmlFor="password">Password</label>
+					<label htmlFor="password"></label>
 					<input type="password" name="password" id="password" value={
 						this.state.password || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } placeholder="Password"/>
 				</div>
-
+				<br/>
 				<div>
-					<label htmlFor="confirmPassword">Confirm password</label>
+					<label htmlFor="confirmPassword"></label>
 					<input type="password" name="confirmPassword" id="confirmPassword" value={
 						this.state.confirmPassword || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } placeholder="Confirm Password"/>
 				</div>
 
 				{
@@ -60,8 +60,8 @@ export default class SignupForm extends PureComponent {
 					this.state.password !== this.state.confirmPassword &&
 					<p style={{color:'red'}}>The passwords do not match!</p>
 				}
-
-				<button type="submit">Sign up</button>
+				<br/>
+				<button type="submit" style={{padding:'10px',backgroundColor:'black',color:'white',border:'none',fontSize:'18px'}}>Sign up</button>
 			</form>
 		)
 	}

@@ -9,6 +9,10 @@ h2 {
 
 .create-game {
   margin-top: 10px !important;
+  background-color: orange!important;
+  color:white!important;
+  border:none!important;
+  box-shadow:2px 2px 2px black!important;
 }
 
 .outer-paper {
