@@ -18,18 +18,14 @@ class LoginPage extends PureComponent {
 			<div style={{textAlign:'center'}}>
 
 				<div style={{maxWidth:'500px',margin:'auto',backgroundColor:'green',color:'white',padding:'25px',borderRadius:'5%'}}>
-					<h3>How To Play Hand-Cricket!</h3>
+					<h3>How To Play Click-Cricket!</h3>
 					<h2>1:</h2>
-					<h4>One player bats (the Batsman) and the opponent bowls (The Bowler). Each Player has 6 balls.</h4>
+					<h4>Both the players have options to score runs ( points ) by clicking on buttons from 1 to 6.</h4>
 					<h2>2:</h2>
-					<h4>Both Players "throw" hands (like in Rock Paper Scissors) with any finger(s) extended.<br /> 
-						like in Rock Paper Scissors both of the players do this at the same time.<br /> 
-						Example: Player 1 (the Batsman first) throws a 5 and Player 2 throws 3. The Batsman scores 5 runs(points).<br /></h4>
+					<h4>Player 1 can only choose ODD runs and Player 2 can only choose EVEN runs to score.<br /></h4>
 					<h2>3:</h2>
-					<h4>If the Bowler throws the same finger as the Batter, the roles will switch (Batsman will bowl now and the Bowler will bat). And player 2 
-					can score points.</h4>
-					<h2>4:</h2>
-					<h4>The Player with the highest score wins!</h4>	
+					<h4>The player with the higher score wins at the end.</h4>
+		
 
 					</div>
 				<h1>Login</h1>

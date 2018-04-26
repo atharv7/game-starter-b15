@@ -4,7 +4,7 @@ import {
 } from 'routing-controllers'
 import User from '../users/entity'
 import { Game, Player } from './entities'
-import { calculateWinner, finished} from './logic'
+import { calculateWinner} from './logic'
 // import { Validate } from 'class-validator'
 import {io} from '../index'
 
@@ -81,19 +81,19 @@ export default class GameController {
     // }    
 
     // console.log('2')
-
     // const winner = calculateWinner(update.board)
     // if (winner) {
-    //   // game.winner = winner
+    //   game.winner = winner
     //   game.status = 'finished'
     // }
-    // else if (finished(update.board)) {
-    //   game.status = 'finished'
-    // }
+    // // else if (finished(update.board)) {
+    // //   game.status = 'finished'
+    // // }
     // else {
     //   console.log('triggered!!!!!!!!')
     //   game.turn = player.symbol === 'x' ? 'o' : 'x'
     // }
+
     game.board = update.board
     
     // if(game.turn==='x') {
@@ -102,6 +102,7 @@ export default class GameController {
     //   game.turn='x'
     // }
     game.balls +=1
+    
     await game.save()
 
     

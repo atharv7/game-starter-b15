@@ -15,7 +15,7 @@ const TopBar = (props) => {
     <AppBar position="absolute" style={{zIndex:10}}>
       <Toolbar style={{backgroundColor: 'green'}}>
         <Typography variant="title" color="inherit" style={{flex: 1}}>
-          Hand-Cricket!
+          Click-Cricket!
         </Typography>
         {
           user &&

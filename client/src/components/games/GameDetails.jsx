@@ -23,11 +23,24 @@ class GameDetails extends PureComponent {
     const {users, game, updateGame, userId} = this.props
     const board = game.board
     if(game.players[0].userId===userId){
+      if (points%2==0) {
     updateGame(game.id, [board[0]+points,board[1]])
+  }
+    else {
+      game.winner=2
+      game.status='finished'
+      updateGame(game.id,board)
+    }
     // game.turn='o'
     // updateGame(game.id,game.turn) }
     } else { 
+      if(points%2!=0) {
     updateGame(game.id, [board[0],board[1]+points])
+  } else {
+    game.winner=1
+    game.status='finished'
+    updateGame(game.id,board)
+  }
   }
   var ul = document.querySelector('#runbuttons')
 for (var i = ul.children.length; i >= 0; i--) {
@@ -54,7 +67,7 @@ for (var i = ul.children.length; i >= 0; i--) {
       .map(p => p.userId)[0]
 
     return (<Paper className="outer-paper">
-      <h1>Hand Cricket - {game.id}</h1>
+      <h1>Click Cricket - {game.id}</h1>
 
       <p>Status: {game.status}</p>
 
