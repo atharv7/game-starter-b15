@@ -21,9 +21,17 @@ class GameDetails extends PureComponent {
 
   makeMove = (points) => {
     const {game, updateGame} = this.props
-    console.log(points)
+    
     const board = game.board
+    if(game.turn ==='x'){
     updateGame(game.id, [board[0]+points,board[1]])
+    game.turn='o'
+    // game.turn='o'
+    // updateGame(game.id,game.turn) }
+    } else { 
+    updateGame(game.id, [board[0],board[1]+points])
+      game.turn='x'
+  }
   }
 
 

@@ -4,6 +4,7 @@ import User from '../users/entity'
 export type Board = [ number,number ]
 
 type Status =  'pending' | 'started'| 'finished'
+type Symbol = 'x'|'o'
 
 
 const emptyBoard: Board = [ 0,0 ]

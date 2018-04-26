@@ -66,3 +66,7 @@ export const calculateWinner = (board: Board) =>{
   }
   }
 }
+export const finished = (board: Board): boolean =>
+  board
+    .reduce((a,b) => a.concat(b))
+    .every(symbol => symbol !== null)

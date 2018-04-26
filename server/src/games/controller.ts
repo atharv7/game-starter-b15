@@ -4,7 +4,7 @@ import {
 } from 'routing-controllers'
 import User from '../users/entity'
 import { Game, Player } from './entities'
-// import {IsBoard, calculateWinner} from './logic'
+import { calculateWinner, finished} from './logic'
 // import { Validate } from 'class-validator'
 import {io} from '../index'
 
@@ -91,11 +91,17 @@ export default class GameController {
     //   game.status = 'finished'
     // }
     // else {
-    //   game.turn = 
+    //   console.log('triggered!!!!!!!!')
+    //   game.turn = player.symbol === 'x' ? 'o' : 'x'
     // }
     game.board = update.board
+    if(game.turn==='x') {
+      game.turn='o'
+    } else {
+      game.turn='x'
+    }
     await game.save()
-    console.log('3')
+    
     
     io.emit('action', {
       type: 'UPDATE_GAME',

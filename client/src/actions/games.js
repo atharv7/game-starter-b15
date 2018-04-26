@@ -68,7 +68,27 @@ export const createGame = () => (dispatch, getState) => {
     .catch(err => console.error(err))
 }
 
-export const updateGame = (gameId, board) => (dispatch, getState) => {
+
+export const switchTurn = (gameId, currentTurn) => (dispatch, getState) => {
+  const state = getState()
+  const jwt = state.currentUser.jwt
+  let turntosend = 'a'
+  if (isExpired(jwt)) return dispatch(logout())
+  if(currentTurn ==='x') {
+  const turntosend = 'o'
+  } else {
+  const turntosend = 'x'
+  }
+  request
+    .patch(`${baseUrl}/games/${gameId}`)
+    .set('Authorization', `Bearer ${jwt}`)
+    .send({ turn: turntosend })
+    .then(_ => dispatch(updateGameSuccess()))
+    .catch(err => console.error(err))
+}
+
+
+export const updateGame = (gameId, board, turn) => (dispatch, getState) => {
   const state = getState()
   const jwt = state.currentUser.jwt
 
@@ -78,6 +98,9 @@ export const updateGame = (gameId, board) => (dispatch, getState) => {
     .patch(`${baseUrl}/games/${gameId}`)
     .set('Authorization', `Bearer ${jwt}`)
     .send({ board })
-    .then(_ => dispatch(updateGameSuccess()))
+    .then(_ => {
+      switchTurn(gameId, turn)
+      dispatch(updateGameSuccess()
+    )})
     .catch(err => console.error(err))
 }
