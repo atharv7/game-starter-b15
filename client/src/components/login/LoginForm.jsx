@@ -18,22 +18,20 @@ export default class LoginForm extends PureComponent {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form onSubmit={this.handleSubmit} style={{maxWidth:'500px',margin:'auto',backgroundColor:'orange',color:'white',padding:'25px',borderRadius:'5%'}}>
 				<div>
-					<label htmlFor="email">Email</label>
 					<input type="email" name="email" id="email" value={
 						this.state.email || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange }  placeholder="You@Example.com"/>
 				</div>
-
+						<br/>
 				<div>
-					<label htmlFor="password">Password</label>
 					<input type="password" name="password" id="password" value={
 						this.state.password || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } placeholder="Password"/>
 				</div>
-
-				<button type="submit">Login</button>
+<br/>
+				<button type="submit" style={{padding:'10px',backgroundColor:'black',color:'white',border:'none',fontSize:'18px'}}>Login</button>
 			</form>
 		)
 	}

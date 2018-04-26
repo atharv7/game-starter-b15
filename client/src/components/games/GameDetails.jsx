@@ -51,7 +51,7 @@ class GameDetails extends PureComponent {
 
       {/* <p>Batting:{users[userId].firstName}</p> */}
       <p>Your Score: {game.board[0]}</p>
-      <p>Overs: </p>
+      <p>Overs: {game.board[1]}</p>
 
       
   <p> {(game.players[1])?(users[game.players[0].userId].firstName===users[userId].firstName)?users[game.players[1].userId].firstName+'\'s Score:':users[game.players[0].userId].firstName+'\'s Score:':'**Waiting**'}</p>
