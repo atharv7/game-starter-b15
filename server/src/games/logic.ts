@@ -66,4 +66,3 @@ export const calculateWinner = (board: Board) =>{
   }
   }
 }
-

@@ -3,7 +3,7 @@ import User from '../users/entity'
 
 export type Board = [ number,number ]
 
-type Status = 'pending' | 'started' | 'finished'
+type Status =  'pending' | 'started'| 'finished'
 
 
 const emptyBoard: Board = [ 0,0 ]
