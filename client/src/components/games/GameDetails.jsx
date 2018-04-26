@@ -50,7 +50,7 @@ class GameDetails extends PureComponent {
       <p>Status: {game.status}</p>
 
       {/* <p>Batting:{users[userId].firstName}</p> */}
-      <p>Your Score: </p>
+      <p>Your Score: {game.board[0]}</p>
       <p>Overs: </p>
 
       
