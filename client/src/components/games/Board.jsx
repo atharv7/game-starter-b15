@@ -16,37 +16,37 @@ import './Board.css'
 
 
 export default (props) => 
-  <div id='runbuttons'>
+  <div id='runbuttons' style={{textAlign:'center'}}>
     
   <button
-    className="board-tile"
+    className="circle"
     // disabled={hasTurn}
     key={`1`}
     onClick={(e) => props.makeMove(parseInt(e.target.innerHTML))}
    >1</button>
   <button
-    className="board-tile"
+    className="circle"
     key={`2`}
     // disabled={hasTurn}
     onClick={(e) => props.makeMove(parseInt(e.target.innerHTML))}
   >2</button>
   <button
-    className="board-tile"
+    className="circle"
     key={`3`}
     onClick={(e) => props.makeMove(parseInt(e.target.innerHTML))}
   >3</button>
   <button
-    className="board-tile"
+    className="circle"
     key={`4`}
    onClick={(e) => props.makeMove(parseInt(e.target.innerHTML))}
   >4</button>
   <button
-    className="board-tile"
+    className="circle"
     key={`5`}
     onClick={(e) => props.makeMove(parseInt(e.target.innerHTML))}
   >5</button>
   <button
-    className="board-tile"
+    className="circle"
     key={`6`}
     onClick={(e) => props.makeMove(parseInt(e.target.innerHTML))}
   >6</button>
