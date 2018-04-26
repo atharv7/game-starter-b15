@@ -1,7 +1,9 @@
 import React from 'react'
 import './Board.css'
 
-// const renderButton = (makeMove, hasTurn) => {
+
+
+// const renderButton = (makeMove) => {}
 //   return (null
 //     // <button
 //     //   className="board-tile"

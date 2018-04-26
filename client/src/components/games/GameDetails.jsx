@@ -21,9 +21,9 @@ class GameDetails extends PureComponent {
 
   makeMove = (points) => {
     const {game, updateGame} = this.props
-    console.log(points, game.board)
-    const board = game.board[0] + points
-    updateGame(game.id, board)
+    console.log(points)
+    const board = game.board
+    updateGame(game.id, [board[0]+points,board[1]])
   }
 
 
@@ -50,7 +50,7 @@ class GameDetails extends PureComponent {
       <p>Status: {game.status}</p>
 
       {/* <p>Batting:{users[userId].firstName}</p> */}
-      <p>Your Score: </p>
+      <p>Your Score: {game.board[0]}</p>
       <p>Overs: </p>
 
       

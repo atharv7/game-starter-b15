@@ -3,7 +3,7 @@ import User from '../users/entity'
 
 export type Board = [ number,number ]
 
-type Status = 'batting' | 'bowling' | 'End of match'
+type Status =  'pending' | 'started'| 'finished'
 
 
 const emptyBoard: Board = [ 0,0 ]
@@ -14,7 +14,7 @@ export class Game extends BaseEntity {
   @PrimaryGeneratedColumn()
   id?: number
 
-  @Column('json', {default: ['0', '0']})
+  @Column('json', {default: emptyBoard})
   board: Board
 
   @Column('char', {length:1, default: 'x'})
