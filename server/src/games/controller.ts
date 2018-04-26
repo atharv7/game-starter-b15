@@ -75,7 +75,7 @@ export default class GameController {
     const player = await Player.findOne({ user, game })
     if (!player) throw new ForbiddenError(`You are not part of this game`)
     if (game.status !== 'started') throw new BadRequestError(`The game is not started yet`)
-    if (player.symbol !== game.turn) throw new BadRequestError(`It's not your turn`)
+    // if (player.symbol !== game.turn) throw new BadRequestError(`It's not your turn`)
     // if (!isValidTransition(player.symbol, game.board, update.board)) {
     //   throw new BadRequestError(`Invalid move`)
     // }    
@@ -96,11 +96,11 @@ export default class GameController {
     // }
     game.board = update.board
     
-    if(game.turn==='x') {
-      game.turn='o'
-    } else {
-      game.turn='x'
-    }
+    // if(game.turn==='x') {
+    //   game.turn='o'
+    // } else {
+    //   game.turn='x'
+    // }
     game.balls +=1
     await game.save()
 

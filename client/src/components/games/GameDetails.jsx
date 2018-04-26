@@ -20,18 +20,19 @@ class GameDetails extends PureComponent {
   joinGame = () => this.props.joinGame(this.props.game.id)
 
   makeMove = (points) => {
-    const {game, updateGame} = this.props
-    
+    const {users, game, updateGame, userId} = this.props
     const board = game.board
-    if(game.turn ==='x'){
+    if(game.players[0].userId===userId){
     updateGame(game.id, [board[0]+points,board[1]])
-    game.turn='o'
     // game.turn='o'
     // updateGame(game.id,game.turn) }
     } else { 
     updateGame(game.id, [board[0],board[1]+points])
-      game.turn='x'
   }
+  var ul = document.querySelector('#runbuttons')
+for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+}
   }
 
 
@@ -66,11 +67,11 @@ class GameDetails extends PureComponent {
 
 
 
-      {
+      {/* {
         game.status === 'started' &&
         player && player.symbol === game.turn &&
         <div>It's your turn!</div>
-      }
+      } */}
 
       {
         game.status === 'pending' &&
